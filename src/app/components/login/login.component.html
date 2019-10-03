@@ -1,0 +1,23 @@
+<div class="col-md-12">
+        <h1>{{ page_title }}</h1>
+        <p>Identificate en la plataforma para comenzar!!</p>
+    
+        <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div>
+                <label for="enrollment">Matricula</label>
+                <input type="text" name="enrollment" #enrollment="ngModel" [(ngModel)]="user.enrollment" required pattern="R+[0-9]+">
+                <small *ngIf="!enrollment.valid && enrollment.touched" class="invalid-feedback d-block">
+                    El correo no es valido
+                </small>
+            </div>
+            <div>
+                <label for="password">Contrasena</label>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+                <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+                    La contrasena no es valida
+                </small>
+            </div>
+    
+            <input type="submit" value="Identificarse" [disabled]="loginForm.invalid">
+        </form>
+    </div>
