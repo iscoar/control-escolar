@@ -1,11 +1,3 @@
-<div class="container">
-  <a [routerLink]="['/login']" *ngIf="!identity">Login</a>
-  <div class="menu" *ngIf="identity  && identity.name">
-    <p>{{ identity.name + ' ' + identity.surname }}</p>
-    <!-- <p>Admin</p> -->
-    <a [routerLink]="['/logout/1']">Logout</a>
-  </div>
-
-  <!-- Content -->
-  <router-outlet></router-outlet>
-</div>
+<app-header *ngIf="_router.url !== '/login'"></app-header>
+<!-- Content -->
+<router-outlet></router-outlet>

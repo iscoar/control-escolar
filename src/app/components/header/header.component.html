@@ -1,0 +1,35 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-dark purple" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+      <a class="navbar-brand" [routerLink]="['/inicio']">Control Escolar</a>
+    </mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto" *ngIf="!identity">
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/login']">Login</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto" *ngIf="identity  && identity.name">
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/inicio']">Inicio
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Mi perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/logout/1']">Salir</a>
+            </li>
+        </ul>
+        <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->

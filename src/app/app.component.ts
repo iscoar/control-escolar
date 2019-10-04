@@ -1,5 +1,6 @@
 import { UserService } from './services/user.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   public token;
 
   constructor(
-    public _userService: UserService
+    public _userService: UserService,
+    private _router: Router
   ){
     this.loadUser();
   }
