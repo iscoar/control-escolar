@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <a [routerLink]="['/']" class="previous">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row user-img">
+        <div class="col-lg-12 col-sm-12 col-12 text-center">
+            <img src="http://cag.org.bd/newdesign/assets/img/profile/default.jpg" class="rounded-circle img-thumbnail">
+            <h5>Jose Francisco Amador Rodriguez</h5>
+            <h5>Matricula</h5>
+            <span>R161306021</span>
+            <h5>Carrera</h5>
+            <span>Ing. Tecnologias de la Informacion</span>
+        </div>
+    </div>
+    <!-- Nav Tabs -->
+    <ul class="nav nav-pills nav-justified">
+        <li 
+            *ngFor="let tab of tabs; let index = index" 
+            [className]="'nav-item nav-link '+tab.styles"
+            (click)="showtab(index)">
+            {{ tab.title }}
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-12" *ngIf="tabs[0].status">
+            <p class="ce-text">Sexo: 
+                <span >Hombre</span>
+            </p>
+            <p class="ce-text">Nacionalidad: 
+                <span >Mexicana</span>
+            </p>
+            <p class="ce-text">Lugar de Nacimiento: 
+                <span >Ojocaliente, Zacatecas</span>
+            </p>
+            <p class="ce-text">Fecha: 
+                <span >15/09/1997</span>
+            </p>
+            <p class="ce-text">CURP: 
+                <span >AARF970915HZSMDR08</span>
+            </p>
+            <p class="ce-text">Seguro Facultativo: 
+                <span >14-16-97-2154-5</span>
+            </p>
+            <p class="ce-text">Indice Egetsu: 
+                <span ></span>
+            </p>
+        </div>
+        <div class="col-12" *ngIf="tabs[1].status">
+            Tab2
+        </div>
+        <div class="col-12" *ngIf="tabs[2].status">
+            Tab3
+        </div>
+        <div class="col-12" *ngIf="tabs[3].status">
+            Tab4
+        </div>
+    </div>
+</div>
