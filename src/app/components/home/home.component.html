@@ -1,28 +1,18 @@
 <div class="container">
     <div class="row mt-4">
-        <div class="col-6 mb-3">
-            <div class="card card-body text-center">
-                <i class="fas fa-user"></i>
-                Alumno
-            </div>
+        <div class="col-12 text-center text-success ce-text">
+            Hola de nuevo Francisco!
         </div>
-        <div class="col-6 mb-3">
-            <div class="card card-body text-center">
-                <i class="fas fa-trash"></i>
-                Calificaciones
-            </div>
-        </div>
-        <div class="col-6 mb-3">
-            <div class="card card-body text-center">
-                <i class="fas fa-trash"></i>
-                Faltas
-            </div>
-        </div>
-        <div class="col-6 mb-3">
-            <div class="card card-body text-center">
-                <i class="fas fa-trash"></i>
-                Historico
-            </div>
+        <div 
+        class="col-6 text-center pt-3 pb-3 pr-3 pl-3 mt-3"
+        *ngFor="let item of items">
+            <a [routerLink]="[item.url]">
+                <div [className]="item.color+' ce-container'">
+                    <!-- <i [className]="item.icon+' ce-icon'"></i> -->
+                    <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
+                    <p class="ce-text">{{ item.title }}</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
