@@ -14,38 +14,38 @@ export class HomeComponent implements OnInit {
     this.items = [
       {
         title: 'Avisos',
-        icon: 'fas fa-trash',
-        color: 'text-primary',
+        icon: 'Compartido/Avisos.png',
+        color: 'ce-avisos',
         url: ''
       },
       {
         title: 'Calificaciones',
         icon: 'Alumno/Calificaciones.png',
-        color: 'deep-orange-text',
+        color: 'ce-calificaciones',
         url: ''
       },
       {
         title: 'Cuenta',
-        icon: 'fas fa-trash',
-        color: 'text-info',
+        icon: 'Compartido/Estado de cuenta.png',
+        color: 'ce-cuenta',
         url: ''
       },
       {
         title: 'Historico',
         icon: 'Alumno/Historico.png',
-        color: 'text-success',
+        color: 'ce-historico',
         url: ''
       },
       {
         title: 'Perfil',
         icon: 'Alumno/Perfil.png',
-        color: 'text-danger',
+        color: 'ce-perfil',
         url: '/perfil'
       },
       {
         title: 'Salir',
-        icon: 'fas fa-trash',
-        color: 'deep-purple-text',
+        icon: 'Compartido/Cerrar sesión.png',
+        color: 'ce-salir',
         url: ''
       }
     ]
