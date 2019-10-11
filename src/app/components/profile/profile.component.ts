@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
   constructor() {
     this.tabs = [
       {
-        title: 'DATOS GENERALES',
+        title: 'GENERALES',
         status: true,
         styles: 'active'
       },
@@ -21,15 +21,15 @@ export class ProfileComponent implements OnInit {
         styles: ''
       },
       {
-        title: 'DATOS ESCOLARES',
+        title: 'ESCOLARES',
         status: false,
         styles: ''
       },
-      {
-        title: 'DATOS SOCIO-ECONÓMICOS',
-        status: false,
-        styles: ''
-      }
+      // {
+      //   title: 'DATOS SOCIO-ECONÓMICOS',
+      //   status: false,
+      //   styles: ''
+      // }
     ]
   }
 
