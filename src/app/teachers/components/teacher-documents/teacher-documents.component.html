@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <a [routerLink]="['/']" class="previous">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center text-success font-weight-bold">
+            Sube tu planeacion!
+        </div>
+        <div class="col-12 text-center pt-3 pb-3 pr-3 pl-3 mt-3">
+            <label for="document">
+                <div [className]="item.color+' ce-container'">
+                    <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
+                    <p class="ce-text-icon">{{ item.title }}</p>
+                </div>
+            </label>
+            <input type="file" id="document" name="document" class="d-none">
+            <br>
+            <br>
+            <button type="button" class="btn btn-success" disabled>
+                <i class="fas fa-save pr-2"></i>
+                Guardar
+            </button>
+        </div>
+    </div>
+</div>

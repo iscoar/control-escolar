@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <a [routerLink]="['/tutorias']" class="previous">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center text-success font-weight-bold">
+            Ingresa los datos del alumno
+        </div>
+        <div class="col-12">
+            <form>
+                <div class="md-form">
+                    <input type="text" name="id" id="id" class="form-control">
+                    <label for="id">Matricula</label>
+                </div>
+                <div class="md-form">
+                    <textarea id="reason" name="reason" class="md-textarea form-control" rows="3"></textarea>
+                    <label for="reason">Razon de canalizacion</label>
+                </div>
+                <input type="submit" value="Canalizar" class="btn btn-success float-right">
+            </form>
+        </div>
+    </div>
+</div>
