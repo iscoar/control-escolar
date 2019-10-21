@@ -3,16 +3,17 @@
         <div class="col-12 text-center text-success ce-text">
             Hola de nuevo Francisco!
         </div>
-        <div 
-        class="col-6 text-center pt-3 pb-3 pr-3 pl-3 mt-3"
-        *ngFor="let item of items">
+    </div>
+    <div class="row">
+        <div class="col-6 text-center pt-3 pb-3 pr-3 pl-3 mt-3" *ngFor="let item of items">
             <a [routerLink]="[item.url]">
                 <div [className]="item.color+' ce-container'">
                     <!-- <i [className]="item.icon+' ce-icon'"></i> -->
                     <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
-                    <p class="ce-text">{{ item.title }}</p>
+                    <p class="ce-text-icon">{{ item.title }}</p>
                 </div>
             </a>
         </div>
     </div>
+
 </div>

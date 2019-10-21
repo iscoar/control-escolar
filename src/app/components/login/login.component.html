@@ -17,9 +17,9 @@
                         
                             <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-center p-2">
                                 <div class="mb-3 md-form mt-5" >
-                                    <label for="enrollment form1"  class="text-center" >Matricula</label>
-                                    <input mdbInput id="form1" class="form-control " type="text" name="enrollment" #enrollment="ngModel" [(ngModel)]="user.enrollment" required pattern="R+[0-9]+">
-                                    <small *ngIf="!enrollment.valid && enrollment.touched" class="invalid-feedback d-block">
+                                    <label for="id form1"  class="text-center" >Matricula</label>
+                                    <input mdbInput id="form1" class="form-control " type="text" name="id" #id="ngModel" [(ngModel)]="user.id" required pattern="[a-zA-Z0-9]+">
+                                    <small *ngIf="!id.valid && id.touched" class="invalid-feedback d-block">
                                         Matricula no valida
                                     </small>
                                 </div>
@@ -37,7 +37,7 @@
                                     <mdb-checkbox [checked]="true" [default]="false">Recordar contraseña</mdb-checkbox>
                                 </div>
 
-                                <input  mdbBtn type="button" color="primary" outline="true" mdbWavesEffect type="submit" value="Ingresar" [disabled]="loginForm.invalid">
+                                <input mdbBtn color="primary" outline="true" mdbWavesEffect type="submit" value="Ingresar" [disabled]="loginForm.invalid">
                             </form>
                 
                     </mdb-card-body>  

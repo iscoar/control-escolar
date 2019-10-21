@@ -10,7 +10,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { StudentsModule } from './students/students.module';
+import { TeachersModule } from './teachers/teachers.module';
+import { CashiersModule } from './cashiers/cashiers.module';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,17 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    HeaderComponent,
-    ProfileComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StudentsModule,
+    TeachersModule,
+    CashiersModule,
+    routing
   ],
   providers: [
     appRoutingProvider

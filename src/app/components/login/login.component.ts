@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private _route: ActivatedRoute
   ) {
     this.page_title = 'Identificate';
-    this.user = new User(1, '', '', '', 'ROLE_STUDENT', '', '', '', '', '', '', '', '');
+    this.user = new User('', '', '', '', '', '', '', '', '', '', '', '');
   }
 
   ngOnInit() {
