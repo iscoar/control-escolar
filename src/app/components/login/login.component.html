@@ -1,23 +1,49 @@
-<div class="col-md-12">
-        <h1>{{ page_title }}</h1>
-        <p>Identificate en la plataforma para comenzar!!</p>
-    
-        <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-            <div>
-                <label for="enrollment">Matricula</label>
-                <input type="text" name="enrollment" #enrollment="ngModel" [(ngModel)]="user.enrollment" required pattern="R+[0-9]+">
-                <small *ngIf="!enrollment.valid && enrollment.touched" class="invalid-feedback d-block">
-                    El correo no es valido
-                </small>
-            </div>
-            <div>
-                <label for="password">Contrasena</label>
-                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
-                <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
-                    La contrasena no es valida
-                </small>
-            </div>
-    
-            <input type="submit" value="Identificarse" [disabled]="loginForm.invalid">
-        </form>
+<!--<img  src="assets/img/utna1.png" class="img-fluid d-flex img-thumbnail" style="position: absolute; right: 0; top: 0; height: 100%; width: 100%;" alt="">
+-->
+
+
+<div  class=" row justify-content-center align-items-center mt-md-5 margin-TL ">
+
+    <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 mt-md-5  mx-auto">
+
+            <mdb-card class="mt-md-5">
+                    <mdb-card-header class="success-color white-text text-center py-4">
+                        <h5>
+                            <strong>¡Bienvenido!</strong>
+                          </h5>
+                    </mdb-card-header>
+                
+                    <mdb-card-body class="px-lg-5 pt-0">
+                        
+                            <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-center p-2">
+                                <div class="mb-3 md-form mt-5" >
+                                    <label for="id form1"  class="text-center" >Matricula</label>
+                                    <input mdbInput id="form1" class="form-control " type="text" name="id" #id="ngModel" [(ngModel)]="user.id" required pattern="[a-zA-Z0-9]+">
+                                    <small *ngIf="!id.valid && id.touched" class="invalid-feedback d-block">
+                                        Matricula no valida
+                                    </small>
+                                </div>
+                                <div class="mb-3 md-form mt-2">
+                                    <label for="password form2" >Contrasena</label>
+                                    <input mdbInput id="form2" class="form-control " type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+                                    <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+                                        Contraseña no valida
+                                    </small>
+                                </div>
+
+                        
+                                <div class="text-center mb-5">
+                                    <!-- Default checked -->
+                                    <mdb-checkbox [checked]="true" [default]="false">Recordar contraseña</mdb-checkbox>
+                                </div>
+
+                                <input mdbBtn color="primary" outline="true" mdbWavesEffect type="submit" value="Ingresar" [disabled]="loginForm.invalid">
+                            </form>
+                
+                    </mdb-card-body>  
+                </mdb-card>
+       
     </div>
+</div>
+
+

@@ -1,6 +1,6 @@
 export class User {
     constructor(
-        public id:                  number,
+        public id:                  string,
         public name:                string,
         public last_name:           string,
         public second_last_name:    string,
@@ -10,7 +10,6 @@ export class User {
         public nationality:         string,
         public curp:                string,
         public insurance:           string,
-        public enrollment:          string,
         public password:            string,
         public admission_date:      string,
     ){}
