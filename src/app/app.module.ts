@@ -24,13 +24,13 @@ import { CashiersModule } from './cashiers/cashiers.module';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(),
     FormsModule,
     HttpClientModule,
     StudentsModule,
     TeachersModule,
     CashiersModule,
-    routing
+    routing,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     appRoutingProvider
