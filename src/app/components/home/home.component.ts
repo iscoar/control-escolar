@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit {
             title: 'Cobrar',
             icon: 'Compartido/Avisos.png',
             color: 'ce-avisos',
-            url: 'cobrar'
+            url: '/cobrar'
           }
         ];
         break;

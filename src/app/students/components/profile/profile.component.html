@@ -1,82 +1,84 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row d-md-none">
         <div class="col-12">
             <a [routerLink]="['/']" class="previous">
                 <i class="fas fa-arrow-alt-circle-left"></i>
             </a>
         </div>
     </div>
-    <div class="row user-img">
-        <div class="col-lg-12 col-sm-12 col-12 text-center">
-            <img src="http://cag.org.bd/newdesign/assets/img/profile/default.jpg" class="rounded-circle img-thumbnail">
-            <h5>Jose Francisco Amador Rodriguez</h5>
+    <div class="row mt-md-3">
+        <div class="col-lg-3 col-sm-12 col-12 text-center user-img">
+            <img *ngIf="student.user.gender == 'Hombre'" src="http://cag.org.bd/newdesign/assets/img/profile/default.jpg" class="rounded-circle img-thumbnail">
+            <img *ngIf="student.user.gender == 'Mujer'" src="https://cdn4.vectorstock.com/i/thumbs/82/33/person-gray-photo-placeholder-woman-vector-24138233.jpg" class="rounded-circle img-thumbnail">
+            <h5>{{ student.user.name }} {{ student.user.last_name }} {{ student.user.second_last_name }}</h5>
             <h5>Matricula</h5>
-            <span>R161306021</span>
+            <span>{{ student.user_id }}</span>
             <h5>Carrera</h5>
-            <span>Ing. Tecnologias de la Informacion</span>
+            <span>{{ student.career_id}}</span>
         </div>
-    </div>
-    <!-- Nav Tabs -->
-    <ul class="nav nav-pills nav-justified">
-        <li 
-            *ngFor="let tab of tabs; let index = index" 
-            [className]="'nav-item nav-link '+tab.styles"
-            (click)="showtab(index)">
-            {{ tab.title }}
-        </li>
-    </ul>
-    <div class="row ce-text">
-        <div class="col-12" *ngIf="tabs[0].status">
-            <p>Sexo: 
-                <span >Hombre</span>
-            </p>
-            <p>Nacionalidad: 
-                <span >Mexicana</span>
-            </p>
-            <p>Lugar de Nacimiento: 
-                <span >Ojocaliente, Zacatecas</span>
-            </p>
-            <p>Fecha: 
-                <span >15/09/1997</span>
-            </p>
-            <p>CURP: 
-                <span >AARF970915HZSMDR08</span>
-            </p>
-            <p>Seguro Facultativo: 
-                <span >14-16-97-2154-5</span>
-            </p>
-            <p>Indice Egetsu: 
-                <span ></span>
-            </p>
+        <div class="col-lg-9 col-sm-12 col-12">
+                <ul class="nav nav-pills nav-justified">
+                        <li 
+                            *ngFor="let tab of tabs; let index = index" 
+                            [className]="'nav-item nav-link '+tab.styles"
+                            (click)="showtab(index)">
+                            {{ tab.title }}
+                        </li>
+                    </ul>
+                    <div class="row ce-text">
+                        <div class="col-12" *ngIf="tabs[0].status">
+                            <p>Sexo: 
+                                <span >{{ student.user.gender }}</span>
+                            </p>
+                            <p>Nacionalidad: 
+                                <span >{{ student.user.nationality }}</span>
+                            </p>
+                            <p>Lugar de Nacimiento: 
+                                <span >{{ student.user.locality }}, {{ student.user.neighborhood }}</span>
+                            </p>
+                            <p>Fecha: 
+                                <span >{{ student.user.birthday }}</span>
+                            </p>
+                            <p>CURP: 
+                                <span >{{ student.user.curp }}</span>
+                            </p>
+                            <p>Seguro Facultativo: 
+                                <span >{{ student.user.insurance }}</span>
+                            </p>
+                            <p>Indice Egetsu: 
+                                <span >{{ student.egetsu_rating }}</span>
+                            </p>
+                        </div>
+                        <div class="col-12" *ngIf="tabs[1].status">
+                            <p>Calle: <span>{{ student.user.street }}</span></p>
+                            <p>Número Ext/Int: <span>{{ student.user.outdoor_number }}</span></p>
+                            <p>Colonia: <span>{{ student.user.neighborhood }}</span></p>
+                            <p>Localidad: <span>{{ student.user.locality }}</span></p>
+                            <p>Estado: <span>Zacatecas</span></p>
+                            <p>Municipio: <span>{{ student.user.current_township_id }}</span></p>
+                            <p>Código Postal: <span>{{ student.user.postal_code }}</span></p>
+                            <p>Teléfono: <span>{{ student.user.phone }}</span></p>
+                            <p>e-mail: <span>{{ student.user.email }}</span></p>
+                        </div>
+                        <div class="col-12" *ngIf="tabs[2].status">
+                            <p>Escuela de Procedencia: <span>COBAEZ LUIS MOYA</span></p>
+                            <p>Promedio: <span>8.74</span></p>
+                            <p>Estado: <span>Zacatecas</span></p>
+                            <p>Municipio: <span>Luis Moya</span></p>
+                            <p>Nivel: <span>Licenciatura</span></p>
+                            <p>Grado: <span>4TO</span></p>
+                            <p>Carrera: <span>Tecnologias de la Informacion</span></p>
+                            <p>Plan Estudio: <span>2009</span></p>
+                            <p>Turno: <span>Vespertino</span></p>
+                            <p>Plantel: <span>Rincon</span></p>
+                            <p>Situación: <span>{{ student.status }}</span></p>
+                            <p>Tipo: <span>Carga completa</span></p>
+                            <p>Puntaje obtenido en EXANI-II: <span>0</span></p>
+                        </div>
+                        <!-- <div class="col-12" *ngIf="tabs[3].status">
+                            Tab4
+                        </div> -->
+                    </div>
         </div>
-        <div class="col-12" *ngIf="tabs[1].status">
-            <p>Calle: <span>TIJERA</span></p>
-            <p>Número Ext/Int: <span>8</span></p>
-            <p>Colonia: <span>BUENAVISTA</span></p>
-            <p>Localidad: <span></span></p>
-            <p>Estado: <span>Zacatecas</span></p>
-            <p>Municipio: <span>Ojocaliente</span></p>
-            <p>Código Postal: <span>98724</span></p>
-            <p>Teléfono: <span>4581218867</span></p>
-            <p>e-mail: <span>ISCO.AMAADOR@GMAIL.COM</span></p>
-        </div>
-        <div class="col-12" *ngIf="tabs[2].status">
-            <p>Escuela de Procedencia: <span>COBAEZ LUIS MOYA</span></p>
-            <p>Promedio: <span>8.74</span></p>
-            <p>Estado: <span>Zacatecas</span></p>
-            <p>Municipio: <span>Luis Moya</span></p>
-            <p>Nivel: <span>Licenciatura</span></p>
-            <p>Grado: <span>4TO</span></p>
-            <p>Carrera: <span>Tecnologias de la Informacion</span></p>
-            <p>Plan Estudio: <span>2009</span></p>
-            <p>Turno: <span>Vespertino</span></p>
-            <p>Plantel: <span>Rincon</span></p>
-            <p>Situación: <span>Activo</span></p>
-            <p>Tipo: <span>Carga completa</span></p>
-            <p>Puntaje obtenido en EXANI-II: <span>0</span></p>
-        </div>
-        <!-- <div class="col-12" *ngIf="tabs[3].status">
-            Tab4
-        </div> -->
     </div>
 </div>

@@ -1,19 +1,19 @@
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-12 text-center text-success ce-text">
-            Hola de nuevo Francisco!
-        </div>
-    </div>
+<div class="container-fluid">
     <div class="row">
-        <div class="col-6 text-center pt-3 pb-3 pr-3 pl-3 mt-3" *ngFor="let item of items">
-            <a [routerLink]="[item.url]">
-                <div [className]="item.color+' ce-container'">
-                    <!-- <i [className]="item.icon+' ce-icon'"></i> -->
-                    <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
-                    <p class="ce-text-icon">{{ item.title }}</p>
+        <div class="col-12 col-md-3 pt-sm-3 pb-sm-3 pr-sm-3 pl-sm-3 mt-sm-3  d-none d-md-block">
+            <div class="row">
+                <div class="col-6 text-center" *ngFor="let item of items">
+                    <a [routerLink]="[item.url]">
+                        <div [className]="item.color+' ce-container'">
+                            <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
+                            <p class="ce-text-icon-desktop">{{ item.title }}</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <router-outlet></router-outlet>
         </div>
     </div>
-
 </div>

@@ -1,14 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../../services/student.service';
+import { Router } from '@angular/router';
+import { Student } from 'src/app/models/student';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.sass']
+  styleUrls: ['./profile.component.sass'],
+  providers: [StudentService]
 })
 export class ProfileComponent implements OnInit {
   public tabs: any[];
+  public student: Student;
 
-  constructor() {
+  constructor(
+    private _studentService: StudentService,
+    private _router: Router
+  ) {
     this.tabs = [
       {
         title: 'GENERALES',
@@ -34,7 +42,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.tabs);
+    this.loadStudent();
   }
 
   showtab(index: number) {
@@ -44,6 +52,20 @@ export class ProfileComponent implements OnInit {
     }
     this.tabs[index].status = true;
     this.tabs[index].styles = 'active';
+  }
+
+  loadStudent() {
+    this._studentService.getInfo().subscribe(
+      response => {
+        if(response.status == 'success') {
+          this.student = response.student;
+          console.log(this.student);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }

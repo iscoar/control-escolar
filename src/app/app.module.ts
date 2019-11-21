@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProvider } from './app.routing';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { StudentsModule } from './students/students.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { CashiersModule } from './cashiers/cashiers.module';
+import { WelcomeComponent } from './students/components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { CashiersModule } from './cashiers/cashiers.module';
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    HeaderComponent
+    HeaderComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
+    DeviceDetectorModule.forRoot(),
     FormsModule,
     HttpClientModule,
     StudentsModule,

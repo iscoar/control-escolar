@@ -58,4 +58,13 @@ export class UserService {
 
     return this.token;
   }
+
+  isLoggedIn() {
+    if(this.getToken() && this.getIdentity()) {
+      let user = this.getIdentity();
+      return user.role;
+    } else {
+      return false;
+    }
+  }
 }

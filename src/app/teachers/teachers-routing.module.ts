@@ -10,19 +10,25 @@ import { TeacherDocumentsComponent } from './components/teacher-documents/teache
 import { MentorshipsComponent } from './components/mentorships/mentorships.component';
 import { MentorshipsCanalizeComponent } from './components/mentorships-canalize/mentorships-canalize.component';
 import { MentorshipsReportComponent } from './components/mentorships-report/mentorships-report.component';
+import { HomeComponent } from '../components/home/home.component';
+import { UserGuard } from '../guards/user.guard';
 
 
 
 const routes: Routes = [
-  { path: 'grupos', component: GroupsComponent },
-  { path: 'grupo/:name', component: GroupComponent },
-  { path: 'grupo/:name/calificaciones', component: GroupScoreComponent },
-  { path: 'grupo/:name/asistencia', component: GroupAttendanceComponent },
-  { path: 'horario', component: ScheduleComponent },
-  { path: 'planeacion', component: TeacherDocumentsComponent },
-  { path: 'tutorias', component: MentorshipsComponent },
-  { path: 'tutorias/canalizar', component: MentorshipsCanalizeComponent },
-  { path: 'tutorias/reportar', component: MentorshipsReportComponent },
+  {
+    path: '', component: HomeComponent, canActivate: [UserGuard], children: [
+      { path: 'grupos', component: GroupsComponent },
+      { path: 'grupo/:name', component: GroupComponent },
+      { path: 'grupo/:name/calificaciones', component: GroupScoreComponent },
+      { path: 'grupo/:name/asistencia', component: GroupAttendanceComponent },
+      { path: 'horario', component: ScheduleComponent },
+      { path: 'planeacion', component: TeacherDocumentsComponent },
+      { path: 'tutorias', component: MentorshipsComponent },
+      { path: 'tutorias/canalizar', component: MentorshipsCanalizeComponent },
+      { path: 'tutorias/reportar', component: MentorshipsReportComponent },
+    ]
+  },
 ];
 
 @NgModule({

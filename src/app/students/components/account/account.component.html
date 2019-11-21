@@ -25,58 +25,29 @@
                             <th scope="col">Vence</th>
                             <th scope="col">Pago</th>
                             <th scope="col">Importe</th>
+                            <th scope="col">Descuento</th>
                             <th scope="col">Rec.</th>
                             <th scope="col">Saldo</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-success">
-                            <td>INSCRIPCION LICENCIATURA</td>
-                            <td>17/09/2019</td>
-                            <td>01/10/2019</td>
-                            <td>352.00</td>
-                            <td>0.00</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr class="bg-warning">
-                            <td>COLEGIATURA LICENCIAUTRA SEPTIEMBRE</td>
-                            <td>17/09/2019</td>
+                        <tr *ngFor="let payment of payments">
+                            <td>{{ payment.name }}</td>
+                            <td>{{ payment.expires_date }}</td>
                             <td></td>
-                            <td>838.00</td>
-                            <td>8.38</td>
-                            <td>846.38</td>
+                            <td>{{ payment.total }}</td>
+                            <td>{{ payment.discount }}</td>
+                            <td>{{ payment.surcharge }}</td>
+                            <td>{{ payment.grant }}</td>
                         </tr>
                         <tr>
-                            <td>COLEGIATURA LICENCIAUTRA OCTUBRE</td>
-                            <td>16/10/2019</td>
                             <td></td>
-                            <td>838.00</td>
-                            <td>0.00</td>
-                            <td>838.00</td>
-                        </tr>
-                        <tr>
-                            <td>COLEGIATURA LICENCIAUTRA NOVIEMBRE</td>
-                            <td>16/11/2019</td>
-                            <td></td>
-                            <td>838.00</td>
-                            <td>0.00</td>
-                            <td>838.00</td>
-                        </tr>
-                        <tr>
-                            <td>COLEGIATURA LICENCIAUTRA DICIEMBRE</td>
-                            <td>16/12/2019</td>
-                            <td></td>
-                            <td>838.00</td>
-                            <td>0.00</td>
-                            <td>838.00</td>
-                        </tr>
-                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td>Total a Pagar</td>
-                            <td>$3,360.38</td>
+                            <td>${{ total }}</td>
                         </tr>
                     </tbody>
                 </table>

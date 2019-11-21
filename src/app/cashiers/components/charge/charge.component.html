@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-12">
             <a [routerLink]="['/']" class="previous">
@@ -6,5 +6,120 @@
             </a>
         </div>
     </div>
-    <p>charge works!</p>
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <div class="form-group row">
+                    <div class="col-sm-4 offset-sm-4">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" id="id" name="id" placeholder="Matricula">
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block">
+                            <i class="fas fa-search"></i>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="row ce-text">
+                <div class="col-6">
+                    <p>
+                        Nombre:
+                        <span>Jose Francisco Amador Rodriguez</span>
+                    </p>
+                    <p>
+                        Nivel:
+                        <span>Licenciatura</span>
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>
+                        Beca:
+                        <span>No</span>
+                    </p>
+                    <p>
+                        Grado:
+                        <span>10 Cuatrimestre</span>
+                    </p>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-2">
+                            <p>
+                                Forma de pago
+                            </p>
+
+                        </div>
+                        <div class="col-4">
+                            <select class="browser-default custom-select">
+                                <option selected>Escoger forma de pago</option>
+                                <option value="1">Efectivo</option>
+                                <option value="2">Efectivo</option>
+                                <option value="3">Efectivo</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-success">Pagar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive text-nowrap">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Concepto</th>
+                                    <th scope="col">Importe</th>
+                                    <th scope="col">Rec.</th>
+                                    <th scope="col">Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-success">
+                                    <td>INSCRIPCION LICENCIATURA</td>
+                                    <td>352.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>COLEGIATURA LICENCIAUTRA SEPTIEMBRE</td>
+                                    <td>838.00</td>
+                                    <td>8.38</td>
+                                    <td>846.38</td>
+                                </tr>
+                                <tr>
+                                    <td>COLEGIATURA LICENCIAUTRA OCTUBRE</td>
+                                    <td>838.00</td>
+                                    <td>0.00</td>
+                                    <td>838.00</td>
+                                </tr>
+                                <tr>
+                                    <td>COLEGIATURA LICENCIAUTRA NOVIEMBRE</td>
+                                    <td>838.00</td>
+                                    <td>0.00</td>
+                                    <td>838.00</td>
+                                </tr>
+                                <tr>
+                                    <td>COLEGIATURA LICENCIAUTRA DICIEMBRE</td>
+                                    <td>838.00</td>
+                                    <td>0.00</td>
+                                    <td>838.00</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Total a Pagar</td>
+                                    <td>$3,360.38</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
