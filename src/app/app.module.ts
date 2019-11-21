@@ -4,7 +4,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProvider } from './app.routing';
-import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,14 +26,13 @@ import { WelcomeComponent } from './students/components/welcome/welcome.componen
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(),
-    DeviceDetectorModule.forRoot(),
     FormsModule,
     HttpClientModule,
     StudentsModule,
     TeachersModule,
     CashiersModule,
-    routing
+    routing,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     appRoutingProvider

@@ -1,10 +1,38 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
+    <div class="row justify-content-md-center">
+        <div class="col-11">
+            <!--
             <a [routerLink]="['/grupo/itib']" class="previous">
                 <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>
+            </a>-->
+
+            
+
+            <table mdbTable class="table mt-3">
+                <thead>
+                    <tr>
+                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr mdbTableCol *ngFor="let el of elements">
+                    <th scope="row">{{el.id}}</th>
+                    <td>{{el.description}}</td>
+                    <td>{{el.evpa1}}</td>
+                    <td>{{el.evpa2}}</td>
+                    <td>{{el.evpa3}}</td>
+                    <td>{{el.re}}</td>
+                    <td>{{el.prom}}</td>
+                    <td>
+                            <button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect>Modificar</button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <p>group-score works!</p>
+   
+    
+   
 </div>
+

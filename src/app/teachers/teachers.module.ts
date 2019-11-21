@@ -12,7 +12,7 @@ import { MentorshipsComponent } from './components/mentorships/mentorships.compo
 import { MentorshipsCanalizeComponent } from './components/mentorships-canalize/mentorships-canalize.component';
 import { MentorshipsReportComponent } from './components/mentorships-report/mentorships-report.component';
 
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { MentorshipsReportComponent } from './components/mentorships-report/ment
   ],
   imports: [
     CommonModule,
-    TeachersRoutingModule
+    TeachersRoutingModule,
+    MDBBootstrapModule.forRoot()
   ]
 })
 export class TeachersModule { }
