@@ -14,6 +14,7 @@ import { StudentsModule } from './students/students.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { CashiersModule } from './cashiers/cashiers.module';
 import { WelcomeComponent } from './students/components/welcome/welcome.component';
+//import { GroupAttendanceComponent } from './teachers/components/group-attendance/group-attendance.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { WelcomeComponent } from './students/components/welcome/welcome.componen
     HomeComponent,
     ErrorComponent,
     HeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    //HttpClientModule
+    //GroupAttendanceComponent
   ],
   imports: [
     BrowserModule,
