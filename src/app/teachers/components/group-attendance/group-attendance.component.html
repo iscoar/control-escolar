@@ -1,10 +1,34 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <a [routerLink]="['/grupo/itib']" class="previous">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>
-        </div>
-    </div>
-    <p>group-attendance works!</p>
-</div>
+<table class="table table-hover table-fixed">
+
+    <thead>
+        <tr>
+            <th>Matrícula</th>
+            <th>PA1</th>
+            <th>PA2</th>
+            <th>PA3</th>
+            <th>PA%</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr class="table-info">
+            <th scope="row">R162506099</th>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>4%</td>
+        </tr>
+
+        <tr class="table-info">
+            <th scope="row">R161305933'</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0%</td>
+        </tr>
+    </tbody>
+
+    <button type="button" class="btn btn-outline-secondary waves-effect" align="left">Imprimir</button>
+    <button type="button" class="btn btn-outline-danger waves-effect" align="right">Actualizar</button>
+
+</table>

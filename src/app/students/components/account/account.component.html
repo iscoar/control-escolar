@@ -8,8 +8,15 @@
     </div>
     <div class="row ce-text">
         <div class="col-12">
-            <!-- <p>Nivel: <span>Licenciatura</span></p>
-            <p>Grado: <span>4TO</span></p> -->
+            <p>Nivel:
+                <span>
+                    <select class="browser-default custom-select">
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option *ngFor="let level of levels" [value]="level.id">{{ level.name }}</option>
+                    </select>
+                </span>
+            </p>
+            <!-- <p>Grado: <span>4TO</span></p> -->
             <p>Ciclo: <span>Septiembre - Diciembre 2019</span></p>
             <p>Beca: <span>Ninguna</span></p>
             <p>Convenio: <span>No</span></p>
@@ -34,7 +41,7 @@
                         <tr *ngFor="let payment of payments">
                             <td>{{ payment.name }}</td>
                             <td>{{ payment.expires_date }}</td>
-                            <td></td>
+                            <td>{{ payment.payment_date }}</td>
                             <td>{{ payment.total }}</td>
                             <td>{{ payment.discount }}</td>
                             <td>{{ payment.surcharge }}</td>

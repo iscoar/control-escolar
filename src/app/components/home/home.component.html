@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-3 pt-sm-3 pb-sm-3 pr-sm-3 pl-sm-3 mt-sm-3  d-none d-md-block">
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col-12 col-md-1 pt-sm-3 pb-sm-3 pr-sm-3 pl-sm-3 mt-sm-3 pr-md-3 d-none d-md-block sidebar-menu">
             <div class="row">
-                <div class="col-6 text-center" *ngFor="let item of items">
+                <div class="col-12 text-center" *ngFor="let item of items">
                     <a [routerLink]="[item.url]">
                         <div [className]="item.color+' ce-container'">
                             <img [src]="assetsUrl+item.icon" class="img-fluid ce-img">
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-11">
             <router-outlet></router-outlet>
         </div>
     </div>

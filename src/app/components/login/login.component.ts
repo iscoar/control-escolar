@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'login',
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
   onSubmit(form) {
     this._userService.signup(this.user).subscribe(
       response => {
+        console.log(response);
         if (response.status != 'error') {
           this.status = 'success';
           this.token = response;
@@ -38,8 +40,6 @@ export class LoginComponent implements OnInit {
           this._userService.signup(this.user, true).subscribe(
             response => {
               this.identity = response;
-              console.log(this.token);
-              console.log(this.identity);
 
               localStorage.setItem('token', this.token);
               localStorage.setItem('identity', JSON.stringify(this.identity));
@@ -52,7 +52,10 @@ export class LoginComponent implements OnInit {
             }
           )
         } else {
-          this.status = 'error';
+          swal.fire('Oops..', response.original.message, response.original.status);
+          if (response.original.message == 'Contrasena incorrecta')
+            this.user.password = '';
+          
         }
       },
       error => {
