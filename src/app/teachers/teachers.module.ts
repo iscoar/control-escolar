@@ -13,6 +13,7 @@ import { MentorshipsCanalizeComponent } from './components/mentorships-canalize/
 import { MentorshipsReportComponent } from './components/mentorships-report/mentorships-report.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { GroupSubjectsComponent } from './components/group-subjects/group-subjects.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     TeacherDocumentsComponent,
     MentorshipsComponent,
     MentorshipsCanalizeComponent,
-    MentorshipsReportComponent
+    MentorshipsReportComponent,
+    GroupSubjectsComponent
   ],
   imports: [
     CommonModule,

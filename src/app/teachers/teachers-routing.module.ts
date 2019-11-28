@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { GroupsComponent } from './components/groups/groups.component';
 import { GroupComponent } from './components/group/group.component';
+import { GroupSubjectsComponent } from './components/group-subjects/group-subjects.component';
 import { GroupScoreComponent } from './components/group-score/group-score.component';
 import { GroupAttendanceComponent } from './components/group-attendance/group-attendance.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
@@ -19,9 +20,10 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent, canActivate: [UserGuard], children: [
       { path: 'grupos', component: GroupsComponent },
-      { path: 'grupo/:name', component: GroupComponent },
-      { path: 'grupo/:name/calificaciones', component: GroupScoreComponent },
-      { path: 'grupo/:name/asistencia', component: GroupAttendanceComponent },
+      { path: 'grupo/:name/materias', component: GroupSubjectsComponent },
+      { path: 'grupo/:name/materia/:subject', component: GroupComponent },
+      { path: 'grupo/:name/materia/:subject/calificaciones', component: GroupScoreComponent },
+      { path: 'grupo/:name/materia/:subject/asistencia', component: GroupAttendanceComponent },
       { path: 'horario', component: ScheduleComponent },
       { path: 'planeacion', component: TeacherDocumentsComponent },
       { path: 'tutorias', component: MentorshipsComponent },

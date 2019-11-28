@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProvider } from './app.routing';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -32,7 +33,8 @@ import { WelcomeComponent } from './students/components/welcome/welcome.componen
     TeachersModule,
     CashiersModule,
     routing,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     appRoutingProvider
