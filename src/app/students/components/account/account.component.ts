@@ -13,6 +13,8 @@ export class AccountComponent implements OnInit {
   fd: any;
   levels: any[] = [];
   cycles: any[] = [];
+  levelId: any;
+  cycleId: number;
 
   constructor(
     public _studentService: StudentService
@@ -28,7 +30,7 @@ export class AccountComponent implements OnInit {
         if (response.status == 'success') {
           console.log(response);
           this.payments = response.payments;
-          this.fd = response.final_data;
+          this.fd = response.data;
           this.totalmount();
           this.setLevels();
           this.setCycles();
@@ -45,29 +47,50 @@ export class AccountComponent implements OnInit {
   }
 
   setLevels() {
-    for (const key in this.fd) {
-      if (this.fd.hasOwnProperty(key)) {
-        const element = this.fd[key];
-        this.levels.push(element.data);
+    for (const key in this.fd.levels) {
+      if (this.fd.levels.hasOwnProperty(key)) {
+        const element = this.fd.levels[key];
+        this.levels.push(element);
       }
     }
   }
 
   setCycles() {
-    var element;
-    for (const key in this.fd) {
-      if (this.fd.hasOwnProperty(key)) {
-        element = this.fd[key];
-        console.log(element.careers);
-      }
-    }
-    for (const key in element.careers) {
-      if (element.careers.hasOwnProperty(key)) {
-        const carrers = element.careers[key];
-        this.cycles.push(carrers.cycles);
+    for (const key in this.fd.cycles) {
+      if (this.fd.cycles.hasOwnProperty(key)) {
+        const element = this.fd.cycles[key];
+        this.cycles.push(element);
       }
     }
     console.log(this.cycles);
+  }
+
+  levelChanged(level_id: number) {
+    this._studentService.payments_by_level(level_id).subscribe(
+      response => {
+        this.payments = response.payments;
+        this.fd.cycles = response.data.cycles;
+        this.totalmount();
+        this.setLevels();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+  }
+
+  cycleChanged(cycle_id: number) {
+    this.levelId = document.querySelector('#level') as HTMLSelectElement;
+    this._studentService.payments_by_cycle(this.levelId.value, cycle_id).subscribe(
+      response => {
+        this.payments = response.payments;
+        this.totalmount();
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }

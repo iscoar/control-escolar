@@ -10,14 +10,23 @@
         <div class="col-12">
             <p>Nivel:
                 <span>
-                    <select class="browser-default custom-select">
+                    <select id="level" class="browser-default custom-select" (change)="levelChanged($event.target.value)">
                         <!-- <option selected>Open this select menu</option> -->
                         <option *ngFor="let level of levels" [value]="level.id">{{ level.name }}</option>
                     </select>
                 </span>
             </p>
             <!-- <p>Grado: <span>4TO</span></p> -->
-            <p>Ciclo: <span>Septiembre - Diciembre 2019</span></p>
+            <p>Ciclo: 
+                <span>
+                    <select class="browser-default custom-select" (change)="cycleChanged($event.target.value)">
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option *ngFor="let cycle of cycles" [value]="cycle.id">{{ cycle.name }}</option>
+                    </select>
+                </span>
+            </p>
+            <p>Selected option: {{ cycleId }}</p>
+            <p>Change output: {{ printedOption }}</p>
             <p>Beca: <span>Ninguna</span></p>
             <p>Convenio: <span>No</span></p>
         </div>

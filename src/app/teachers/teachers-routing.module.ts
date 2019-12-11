@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: 'grupo/:name/materia/:subject', component: GroupComponent },
       { path: 'grupo/:name/materia/:subject/calificaciones', component: GroupScoreComponent },
       { path: 'grupo/:name/materia/:subject/asistencia', component: GroupAttendanceComponent },
-      { path: 'horario', component: ScheduleComponent },
+      { path: 'horario/:id', component: ScheduleComponent },
       { path: 'planeacion', component: TeacherDocumentsComponent },
       { path: 'tutorias', component: MentorshipsComponent },
       { path: 'tutorias/canalizar', component: MentorshipsCanalizeComponent },

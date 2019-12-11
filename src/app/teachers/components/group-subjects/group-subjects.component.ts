@@ -35,8 +35,8 @@ export class GroupSubjectsComponent implements OnInit {
                 let item = {
                   id: subject.id,
                   title: subject.name,
-                  icon: 'Profesor/Selección de grupo.png',
-                  color: 'ce-grupos',
+                  icon: 'Profesor/subject.png',
+                  color: 'ce-subjects',
                   url: '/grupo/'+params['name']+'/materia/'+subject.id
                 };
                 this.items.push(item);

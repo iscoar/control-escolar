@@ -9,6 +9,7 @@ import { StudentGuard } from '../guards/student.guard';
 import { UserGuard } from '../guards/user.guard';
 import { HomeComponent } from '../components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'perfil', component: ProfileComponent, canActivate: [StudentGuard] },
       { path: 'cuenta', component: AccountComponent, canActivate: [StudentGuard] },
       { path: 'calificaciones', component: ScoreComponent, canActivate: [StudentGuard] },
-      { path: 'historico', component: HistoricalComponent, canActivate: [StudentGuard] }
+      { path: 'historico', component: HistoricalComponent, canActivate: [StudentGuard] },
+      { path: 'horario', component: ScheduleComponent, canActivate: [StudentGuard] }
     ]
   },
 ];

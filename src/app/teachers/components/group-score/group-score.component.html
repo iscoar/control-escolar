@@ -1,38 +1,45 @@
 <div class="container-fluid">
     <div class="row justify-content-md-center">
-        <div class="col-11">
-            <!--
-            <a [routerLink]="['/grupo/itib']" class="previous">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>-->
+        <div class="col-11 mt-3">
+            <label for="level">Evaluacion parcial: </label>
+            <!-- <select id="level" class="browser-default custom-select"> -->
+            <select id="level" class="browser-default custom-select" (change)="levelChanged($event.target.value)">
+                <option *ngFor="let level of levels" [value]="level.gel_id">{{ level.level_name }}</option>
+            </select>
 
-            
-
-            <table mdbTable class="table mt-3">
+            <table mdbTable class="table mt-3 table-responsive-md text-center">
                 <thead>
                     <tr>
-                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                        <th class="text-left">NOMBRE</th>
+                        <th *ngFor="let c of criteria" scope="col">{{ c.name }}</th>
+                        <!-- <th class="text-center">Remove</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr mdbTableCol *ngFor="let el of elements">
-                    <th scope="row">{{el.id}}</th>
-                    <td>{{el.description}}</td>
-                    <td>{{el.evpa1}}</td>
-                    <td>{{el.evpa2}}</td>
-                    <td>{{el.evpa3}}</td>
-                    <td>{{el.re}}</td>
-                    <td>{{el.prom}}</td>
-                    <td>
-                            <button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect>Modificar</button>
-                    </td>
+                    <tr mdbTableCol *ngFor="let score of scores; let score_id = index">
+                        <th scope="row" class="text-left">{{ score[0].student_name }}</th>
+                        <!-- <td *ngFor="let criteria of score; let id = index">{{ criteria.student_score }}</td> -->
+                        <td *ngFor="let criteria of score; let id = index">
+                            <span (keyup)="changeValue(score_id, id, 'student_score', $event)" (blur)="updateList(score_id, id, 'student_score', $event)" contenteditable="true">
+                                {{ criteria.student_score }}
+                            </span>
+                        </td>
+                        <!-- <td>
+                            <span class="table-remove">
+                                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0"
+                                    (click)="remove(id)">Remove</button>
+                            </span>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>
+            <button (click)="saveScores()" type="button" mdbBtn color="success" rounded="true" size="md" class="my-0" class="float-right">
+                <i class="fas fa-save pr-2"></i>
+                Guardar Todo
+            </button>
         </div>
     </div>
-   
-    
-   
-</div>
 
+
+
+</div>

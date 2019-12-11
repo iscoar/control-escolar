@@ -36,4 +36,22 @@ export class StudentService {
 
     return this._http.get(this.url+'student/'+id+'/payments');
   }
+
+  payments_by_level(level_id: number): Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(this.url+'student/'+id+'/'+level_id+'/payments');
+  }
+
+  payments_by_cycle(level_id: number, cycle_id: number): Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(this.url+'student/'+id+'/'+level_id+'/'+cycle_id+'/payments');
+  }
+
+  schedule(): Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(this.url+'student/'+id+'/schedule');
+  }
 }

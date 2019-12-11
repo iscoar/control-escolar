@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3 class="text-center font-weight-bold">Horario</h3>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miercoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sabado</th>
+                    </thead>
+                    <tbody class="ce-schedule-group">
+                        <tr *ngFor="let h of schedule">
+                            <th>{{ h[0].session }}</th>
+                            <td *ngFor="let day of h">{{ day.subject }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-elegant float-right">
+                <i class="fas fa-print pr-2"></i>
+                Imprimir
+            </button>
+        </div>
+    </div>
+</div>

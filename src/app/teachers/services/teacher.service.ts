@@ -33,4 +33,22 @@ export class TeacherService {
 
     return this._http.get(this.url+'teacher/'+id+'/group/'+group_id+'/subjects');
   }
+
+  schedule(): Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(this.url+'teacher/'+id+'/schedule');
+  }
+
+  scores(group_id, subject_id): Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(`${this.url}teacher/${id}/group/${group_id}/subject/${subject_id}/scores`);
+  }
+
+  levelScore(group_id, subject_id, gel_id):Observable<any> {
+    let id = this.identity.sub;
+
+    return this._http.get(`${this.url}teacher/${id}/group/${group_id}/subject/${subject_id}/level/${gel_id}/scores`);
+  }
 }

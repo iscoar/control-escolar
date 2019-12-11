@@ -51,6 +51,12 @@ export class HomeComponent implements OnInit {
             url: '/historico'
           },
           {
+            title: 'Horarios',
+            icon: 'Profesor/Horarios.png',
+            color: 'ce-horarios',
+            url: '/horario'
+          },
+          {
             title: 'Perfil',
             icon: 'Alumno/Perfil.png',
             color: 'ce-perfil',
@@ -82,7 +88,7 @@ export class HomeComponent implements OnInit {
             title: 'Horarios',
             icon: 'Profesor/Horarios.png',
             color: 'ce-horarios',
-            url: '/horario'
+            url: `/horario/${this.identity.sub}`
           },
           {
             title: 'Documentos',
