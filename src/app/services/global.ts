@@ -1,3 +1,4 @@
 export var global = {
-    url: 'https://ivorydev-control-escolar.000webhostapp.com/api/'
+    url: 'http://localhost:8000/api/'
 }
+ // url: 'https://ivorydev-control-escolar.000webhostapp.com/api/'
