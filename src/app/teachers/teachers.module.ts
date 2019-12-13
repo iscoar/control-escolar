@@ -14,6 +14,8 @@ import { MentorshipsReportComponent } from './components/mentorships-report/ment
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { GroupSubjectsComponent } from './components/group-subjects/group-subjects.component';
+import { LoadingComponent } from '../components/loading/loading.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,15 @@ import { GroupSubjectsComponent } from './components/group-subjects/group-subjec
     MentorshipsComponent,
     MentorshipsCanalizeComponent,
     MentorshipsReportComponent,
-    GroupSubjectsComponent
+    GroupSubjectsComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
     TeachersRoutingModule,
-    MDBBootstrapModule.forRoot()
-  ]
+    MDBBootstrapModule.forRoot(),
+    FormsModule
+  ],
+  exports: [ LoadingComponent ]
 })
 export class TeachersModule { }

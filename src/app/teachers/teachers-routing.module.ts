@@ -13,12 +13,14 @@ import { MentorshipsCanalizeComponent } from './components/mentorships-canalize/
 import { MentorshipsReportComponent } from './components/mentorships-report/mentorships-report.component';
 import { HomeComponent } from '../components/home/home.component';
 import { UserGuard } from '../guards/user.guard';
+import { NoticesComponent } from '../components/notices/notices.component';
 
 
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, canActivate: [UserGuard], children: [
+      { path: 'avisos', component: NoticesComponent },
       { path: 'grupos', component: GroupsComponent },
       { path: 'grupo/:name/materias', component: GroupSubjectsComponent },
       { path: 'grupo/:name/materia/:subject', component: GroupComponent },

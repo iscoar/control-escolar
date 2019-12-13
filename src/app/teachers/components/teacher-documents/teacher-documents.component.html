@@ -13,9 +13,14 @@
             <input type="file" id="document" name="document" class="d-none">
             <br>
             <br>
-            <button type="button" class="btn btn-success" disabled>
-                <i class="fas fa-save pr-2"></i>
-                Guardar
+            <button type="button" class="btn btn-success" [disabled]="loading" (click)="upload()">
+                <span *ngIf="!loading">
+                    <i class="fas fa-save pr-2"></i>
+                    Guardar
+                </span>
+                <span *ngIf="loading" class="text-center">
+                    <i class="fas fa-spinner fa-pulse pr-2 pl-2"></i>
+                </span>
             </button>
         </div>
     </div>

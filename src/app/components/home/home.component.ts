@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
             title: 'Avisos',
             icon: 'Compartido/Avisos.png',
             color: 'ce-avisos',
-            url: ''
+            url: 'avisos'
           },
           {
             title: 'Calificaciones',
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
             title: 'Salir',
             icon: 'Compartido/Cerrar sesión.png',
             color: 'ce-salir',
-            url: ''
+            url: '/logout/1'
           }
         ];
         break;
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
             title: 'Avisos',
             icon: 'Compartido/Avisos.png',
             color: 'ce-avisos',
-            url: ''
+            url: '/avisos'
           },
           {
             title: 'Grupos',
@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
             title: 'Salir',
             icon: 'Compartido/Cerrar sesión.png',
             color: 'ce-salir',
-            url: ''
+            url: '/logout/1'
           },
         ];
         break;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherService } from '../../services/teacher.service';
 import { ActivatedRoute } from '@angular/router';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class GroupScoreComponent implements OnInit {
   scores: any[] = [];
   levels: any[] = [];
   editField: string;
+  public loading: boolean = true;
 
   constructor(
     private _teacherService: TeacherService,
@@ -57,6 +59,7 @@ export class GroupScoreComponent implements OnInit {
                   this.levels.push(element);
                 }
               }
+              this.loading = false;
               console.log(this.scores);
             }
           }
@@ -79,14 +82,12 @@ export class GroupScoreComponent implements OnInit {
                   this.criteria.push(element);
                 }
               }
-              console.log('Cambiando criterios');
               for (const key in response.student_scores) {
                 if (response.student_scores.hasOwnProperty(key)) {
                   const element = response.student_scores[key];
                   this.scores.push(element);
                 }
               }
-              console.log('Cambiando calificaciones');
             }
           }
         )
@@ -94,19 +95,31 @@ export class GroupScoreComponent implements OnInit {
     )
   }
 
-  updateList(score_id:number, id: number, property: string, event: any) {
+  updateList(score_id: number, id: number, property: string, event: any) {
     const editField = event.target.textContent;
     this.scores[score_id][id][property] = editField;
   }
-  
+
   changeValue(id: number, property: string, event: any) {
     console.log(event);
     // this.editField = event.target.textContent;
   }
-  
+
   saveScores() {
-    console.log('Guardando...');
-    console.log(this.scores);
+    swal.fire({
+      title: 'Guardando calificaciones....',
+      timer: 3500,
+      onBeforeOpen: () => {
+        swal.showLoading()
+      }
+    }).then((result) => {
+      if (
+        /* Read more about handling dismissals below */
+        result.dismiss === swal.DismissReason.timer
+      ) {
+        swal.fire('Exito!', 'Calificaciones fueron guardadas con exito!', 'success');
+      }
+    })
   }
 
 }

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public status: string;
   public token;
   public identity;
+  public loading: boolean = false;
 
   constructor(
     private _userService: UserService,
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form) {
+    this.loading = true;
     this._userService.signup(this.user).subscribe(
       response => {
         console.log(response);
@@ -44,7 +46,8 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('token', this.token);
               localStorage.setItem('identity', JSON.stringify(this.identity));
 
-              this._router.navigate(['inicio']);
+              this.loading = false;
+              this._router.navigate(['/']);
             },
             error => {
               this.status = 'error';

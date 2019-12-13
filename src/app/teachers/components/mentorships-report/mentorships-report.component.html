@@ -4,13 +4,13 @@
             Ingresa los datos del alumno
         </div>
         <div class="col-12">
-            <form>
+            <form #reportForm="ngForm" (ngSubmit)="onSubmit(reportForm)">
                 <div class="md-form">
-                    <input type="text" name="id" id="id" class="form-control">
+                    <input type="text" name="id" class="form-control" [(ngModel)]="id" required>
                     <label for="id">Matricula</label>
                 </div>
                 <div class="md-form">
-                    <textarea id="reason" name="reason" class="md-textarea form-control" rows="3"></textarea>
+                    <textarea name="reason" class="md-textarea form-control" rows="3" [(ngModel)]="reason" required></textarea>
                     <label for="reason">Razon del reporte</label>
                 </div>
                 <input type="submit" value="Reportar" class="btn btn-danger float-right">

@@ -9,9 +9,8 @@ import { TeacherService } from '../../services/teacher.service';
   styleUrls: ['./schedule.component.sass']
 })
 export class ScheduleComponent implements OnInit {
-  public schedule: any;
-  public sessions: any[];
-  public days: any[];
+  public schedule: any[];
+  public loading: boolean = true;
 
   constructor(
     private _teacherService: TeacherService
@@ -19,48 +18,68 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit() {
     this.loadSchedule();
+    setTimeout(() => {
+      this.loading = false;
+    }, 4000);
   }
 
   loadSchedule() {
-    this._teacherService.schedule().subscribe(
-      response => {
-        // const ordered = {};
-        
-        // Object.keys(response.data).sort().forEach(function (key) {
-        //   ordered[key] = response.data[key];
-        // });
-        
-        // for (const key in ordered) {
-        //   if (response.data.hasOwnProperty(key)) {
-        //     const element = response.data[key];
-        //   }
-        // }
-        this.schedule = response.data;
-        this.sessions = response.sessions;
-        this.days = response.days;
-        console.log(this.schedule);
+    this.schedule = [
+      {
+        session: '16:00:00-16:45:00',
+        monday: 'ITI 10A',
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: ''
       },
-      error => {
-        console.log(error);
+      {
+        session: '16:45:00-17:30:00',
+        monday: '',
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: ''
+      },
+      {
+        session: '17:30:00-18:15:00',
+        monday: '',
+        tuesday: 'ITI 10B',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: ''
+      },
+      {
+        session: '18:15:00-18:35:00',
+        monday: '',
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: ''
+      },
+      {
+        session: '18:35:00-19:20:00',
+        monday: '',
+        tuesday: 'ITI 10B',
+        wednesday: '',
+        thursday: '',
+        friday: 'ITI 10A',
+        saturday: ''
+      },
+      {
+        session: '19:20:00-20:05:00',
+        monday: '',
+        tuesday: 'ITI 10B',
+        wednesday: '',
+        thursday: '',
+        friday: 'ITI 10A',
+        saturday: ''
       }
-    );
-  }
-
-  generarPDF() {
-    // html2canvas(document.querySelector('.container-fluid'), {
-    //   letterRendering: true,
-    //   allowTaint: true,
-    //   useCORS: true,
-    //   scale: 1
-    // }).then(function(canvas) {
-    //   let img = canvas.toDataURL("image/png");
-    //   let doc = new jspdf();
-    //   // doc.setFontSize(40);
-    //   // doc.text(35, 25, 'Horario');
-    //   doc.addImage(img,'PNG',7, 20, 195, 105);
-    //   doc.save('horario.pdf');
-    // });
-    console.log('Exito');
+    ]
   }
 
 }

@@ -15,6 +15,7 @@ import { StudentsModule } from './students/students.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { CashiersModule } from './cashiers/cashiers.module';
 import { WelcomeComponent } from './students/components/welcome/welcome.component';
+import { NoticesComponent } from './components/notices/notices.component';
 //import { GroupAttendanceComponent } from './teachers/components/group-attendance/group-attendance.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { WelcomeComponent } from './students/components/welcome/welcome.componen
     ErrorComponent,
     HeaderComponent,
     WelcomeComponent,
+    NoticesComponent,
     //HttpClientModule
     //GroupAttendanceComponent
   ],

@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<app-loading *ngIf="loading"></app-loading>
+<div class="container-fluid" *ngIf="!loading">
     <div class="row mt-4">
         <div class="col-12">
             <h3 class="text-center font-weight-bold">Horario</h3>
@@ -14,67 +15,22 @@
                         <th>Sabado</th>
                     </thead>
                     <tbody class="ce-schedule-group">
-                        <tr>
-                            <th>{{ sessions[0].start_hour }}-{{ sessions[0].end_hour }}</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{{ sessions[1].start_hour }}-{{ sessions[1].end_hour }}</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{{ sessions[2].start_hour }}-{{ sessions[2].end_hour }}</th>
-                            <td></td>
-                            <td>ITI10B</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{{ sessions[3].start_hour }}-{{ sessions[3].end_hour }}</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{{ sessions[4].start_hour }}-{{ sessions[4].end_hour }}</th>
-                            <td></td>
-                            <td>ITI10B</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>{{ sessions[5].start_hour }}-{{ sessions[5].end_hour }}</th>
-                            <td></td>
-                            <td>ITI10B</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr *ngFor="let session of schedule">
+                            <th>{{ session.session }}</th>
+                            <td>{{ session.monday }}</td>
+                            <td>{{ session.tuesday }}</td>
+                            <td>{{ session.wednesday }}</td>
+                            <td>{{ session.thursday }}</td>
+                            <td>{{ session.friday }}</td>
+                            <td>{{ session.saturday }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <button (click)="generarPDF()" type="button" class="btn btn-elegant float-right">
+            <!-- <button (click)="generarPDF()" type="button" class="btn btn-elegant float-right">
                 <i class="fas fa-print pr-2"></i>
                 Imprimir
-            </button>
+            </button> -->
         </div>
     </div>
 </div>

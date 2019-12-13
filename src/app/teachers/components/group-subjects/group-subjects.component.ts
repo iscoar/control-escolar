@@ -11,6 +11,7 @@ export class GroupSubjectsComponent implements OnInit {
   public items: any[];
   public assetsUrl: string;
   public subjects: any[];
+  public loading: boolean = true; 
 
   constructor(
     private _teacherService: TeacherService,
@@ -41,6 +42,7 @@ export class GroupSubjectsComponent implements OnInit {
                 };
                 this.items.push(item);
               });
+              this.loading = false;
             }
             console.log(this.items);
           }

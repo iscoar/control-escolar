@@ -10,6 +10,7 @@ export class GroupsComponent implements OnInit {
   public items: any[];
   public assetsUrl: string;
   public groups: any[];
+  public loading: boolean = true; 
 
   constructor(
     private _teacherService: TeacherService
@@ -37,6 +38,7 @@ export class GroupsComponent implements OnInit {
             };
             this.items.push(item);
           });
+          this.loading = false;
           console.log(this.items);
         }
       }

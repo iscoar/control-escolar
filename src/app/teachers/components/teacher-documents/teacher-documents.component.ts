@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-teacher-documents',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TeacherDocumentsComponent implements OnInit {
   public item: any;
   public assetsUrl: string;
+  public loading: boolean = false;
 
   constructor() {
     this.assetsUrl = 'assets/img/Iconos/';
@@ -19,6 +21,18 @@ export class TeacherDocumentsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  upload() {
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      swal.fire(
+        'Completado!',
+        'Tu planeación se subío correctamente!',
+        'success'
+      )
+    }, 5000);
   }
 
 }
