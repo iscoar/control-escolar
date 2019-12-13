@@ -8,6 +8,7 @@ import { StudentService } from '../../services/student.service';
 })
 export class ScheduleComponent implements OnInit {
   public schedule: any[] = [];
+  public loading: boolean = true;
 
   constructor(
     private _studentService: StudentService
@@ -32,6 +33,7 @@ export class ScheduleComponent implements OnInit {
             this.schedule.push(element);
           }
         }
+        this.loading = false;
       },
       error => {
         console.log(error);

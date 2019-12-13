@@ -1,11 +1,5 @@
-<div class="container-fluid">
-    <div class="row d-md-none">
-        <div class="col-12">
-            <a [routerLink]="['/']" class="previous">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>
-        </div>
-    </div>
+<app-load *ngIf="loading"></app-load>
+<div class="container-fluid" *ngIf="!loading">
     <div class="row mt-md-3">
         <div class="col-lg-3 col-sm-12 col-12 text-center user-img">
             <img *ngIf="student.user.gender == 'Hombre'" src="http://cag.org.bd/newdesign/assets/img/profile/default.jpg" class="rounded-circle img-thumbnail">

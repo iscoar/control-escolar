@@ -1,11 +1,5 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <a [routerLink]="['/']" class="previous">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>
-        </div>
-    </div>
+<app-load *ngIf="loading"></app-load>
+<div class="container-fluid" *ngIf="!loading">
     <div class="row ce-text">
         <div class="col-12">
             <p>Nivel:

@@ -15,6 +15,7 @@ export class AccountComponent implements OnInit {
   cycles: any[] = [];
   levelId: any;
   cycleId: number;
+  public loading: boolean = true;
 
   constructor(
     public _studentService: StudentService
@@ -34,6 +35,7 @@ export class AccountComponent implements OnInit {
           this.totalmount();
           this.setLevels();
           this.setCycles();
+          this.loading = false;
         }
       },
       error => {

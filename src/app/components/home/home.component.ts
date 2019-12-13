@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
             title: 'Avisos',
             icon: 'Compartido/Avisos.png',
             color: 'ce-avisos',
-            url: 'avisos'
+            url: '/avisos'
           },
           {
             title: 'Calificaciones',
@@ -44,12 +44,12 @@ export class HomeComponent implements OnInit {
             color: 'ce-cuenta',
             url: '/cuenta'
           },
-          {
-            title: 'Historico',
-            icon: 'Alumno/Historico.png',
-            color: 'ce-historico',
-            url: '/historico'
-          },
+          // {
+          //   title: 'Historico',
+          //   icon: 'Alumno/Historico.png',
+          //   color: 'ce-historico',
+          //   url: '/historico'
+          // },
           {
             title: 'Horarios',
             icon: 'Profesor/Horarios.png',

@@ -1,10 +1,69 @@
-<div class="container-fluid">
+<app-load *ngIf="loading"></app-load>
+<div class="container-fluid" *ngIf="!loading">
     <div class="row">
         <div class="col-12">
-            <a [routerLink]="['/']" class="previous">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-            </a>
+            <table mdbTable class="table mt-5 table-responsive-md text-center">
+                <thead>
+                    <tr>
+                        <th class="text-left">Materia</th>
+                        <th>EVAP1</th>
+                        <th>EVAP2</th>
+                        <th>EVAP3</th>
+                        <th>CF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">MODELADO DE PROCESOS DE NEGOCIO</td>
+                        <td>9.4</td>
+                        <td>9.2</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">DESARROLLO DE APLICACIONES WEB</td>
+                        <td>10.0</td>
+                        <td>10.0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">SEGURIDAD DE LA INFORMACIÓN</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">TÓPICOS SELECTOS DE TI</td>
+                        <td>9.6</td>
+                        <td>10.0</td>
+                        <td>10.0</td>
+                        <td>10.0</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">INTEGRADORA II</td>
+                        <td>9.2</td>
+                        <td>9.2</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">INGLÉS IX</td>
+                        <td>8.2</td>
+                        <td>8.8</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">NEGOCIACIÓN EMPRESARAL</td>
+                        <td>9.7</td>
+                        <td>9.6</td>
+                        <td>10.0</td>
+                        <td>10.0</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <p>score works!</p>
 </div>

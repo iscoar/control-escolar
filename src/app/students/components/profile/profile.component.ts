@@ -12,6 +12,7 @@ import { Student } from 'src/app/models/student';
 export class ProfileComponent implements OnInit {
   public tabs: any[];
   public student: Student;
+  public loading: boolean = true;
 
   constructor(
     private _studentService: StudentService,
@@ -60,6 +61,7 @@ export class ProfileComponent implements OnInit {
         if(response.status == 'success') {
           this.student = response.student;
           console.log(this.student);
+          this.loading = false;
         }
       },
       error => {

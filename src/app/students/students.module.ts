@@ -8,6 +8,7 @@ import { AccountComponent } from './components/account/account.component';
 import { ScoreComponent } from './components/score/score.component';
 import { HistoricalComponent } from './components/historical/historical.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { LoadComponent } from '../components/load/load.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     AccountComponent,
     ScoreComponent,
     HistoricalComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    LoadComponent
   ],
   imports: [
     CommonModule,
